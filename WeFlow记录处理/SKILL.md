@@ -1,6 +1,6 @@
 ---
 name: WeFlow记录处理
-description: 微信 WeFlow 导出聊天记录双层高精清洗工具。当青城说”清洗 WeFlow 记录””过滤聊天记录””帮我把新微信记录脱水/去噪”时触发。素材箱出现新的 WeFlow .txt 文件时主动提醒青城是否清洗。串联 Layer 1 结构清洗（翻译微信ID为真实姓名、去除系统噪音）和 Layer 2 大模型语义过滤（DeepSeek v4-flash 高精去噪，保留教练指导、技术问答与常青链接），原地重写覆盖原文件并保存 .bak 备份。
+description: 微信WeFlow导出双层高精清洗（结构+语义去噪）。触发：「清洗WeFlow记录」；素材箱新WeFlow时主动提醒。
 ---
 
 # WeFlow 记录处理 Skill (双层高精过滤管道)
@@ -44,12 +44,12 @@ bash scripts/run_pipeline.sh "<WeFlow 聊天记录 .txt 文件路径或目录路
 
 ##### 1. 清洗单个文件
 ```bash
-bash scripts/run_pipeline.sh "$(pwd)/素材箱/_待处理/微信记录/群聊_DeepSeek入门2群-3月航海_全部时间.txt"
+bash scripts/run_pipeline.sh "/Users/chenyilin/青城的知识树/素材箱/_待处理/微信记录/群聊_DeepSeek入门2群-3月航海_全部时间.txt"
 ```
 
 ##### 2. 批量清洗目录下所有符合条件的群聊/私聊 `.txt` 记录 (推荐)
 ```bash
-bash scripts/run_pipeline.sh "$(pwd)/素材箱/_待处理/微信记录"
+bash scripts/run_pipeline.sh "/Users/chenyilin/青城的知识树/素材箱/_待处理/微信记录"
 ```
 
 运行完成后，脚本会输出直观的降噪百分比汇总报告，并将原始记录原地覆盖，备份存储为 `.bak` 文件。

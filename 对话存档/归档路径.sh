@@ -7,7 +7,7 @@
 
 set -uo pipefail
 
-PROJECT="/Users/chenyilin/Documents/青城的知识树"
+PROJECT="/Users/chenyilin/青城的知识树"
 ARCHIVE_DIR="$PROJECT/00-运转日志/对话记录"
 
 HOUR=$(date +%H)
